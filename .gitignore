@@ -1,0 +1,8 @@
+/.phive
+/.phpdoc
+/tools
+
+/vendor
+/composer.lock
+
+/.ceculasync.json

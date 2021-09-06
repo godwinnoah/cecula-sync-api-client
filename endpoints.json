@@ -1,0 +1,52 @@
+{
+    "base": "https://cecula.com/sync/api",
+    "serviceAPIs": "https://cecula.com/sync/api/endpoints.json",
+    "endpoints": {
+        "call": {
+            "dial": {
+                "endpoint": "flash-number"
+            },
+            "dialledCallStatus": {
+                "endpoint": "dialled-call-status"
+            },
+            "newMissedCalls": {
+                "endpoint": "new-missed-calls"
+            },
+            "setAutoResponse": {
+                "endpoint": "set-call-autoresponse"
+            }
+        },
+        "sms": {
+            "sendSms": {
+                "endpoint": "send-sms"
+            },
+            "sentSmsStatus": {
+                "endpoint": "sent-sms-status"
+            },
+            "unreadSms": {
+                "endpoint": "get-new-sms"
+            },
+            "setAutoResponse": {
+                "endpoint": "set-sms-autoresponse"
+            }
+        },
+        "account": {
+            "getBalance": {
+                "endpoint": "cecula-balance"
+            },
+            "getSubscriptionStatus": {
+                "endpoint": "subscription-status"
+            },
+            "getSimStatus": {
+                "endpoint": "management/sim-status"
+            },
+            "refreshSim": {
+                "endpoint": "management/refresh-sim"
+            }
+        }
+    },
+    "loginType": "",
+    "version": "0.0.1",
+    "lastUpdateCheck": "",
+    "updateInterval": 86400
+}

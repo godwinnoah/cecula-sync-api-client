@@ -1,0 +1,25 @@
+{
+    "name": "cecula/sync-api-client",
+    "description": "A basic library for consuming the Cecula Sync API",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CeculaSyncApiClient\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Godwin Noah",
+            "email": "ng@noahgodwin.com",
+            "homepage": "https://godwinnoah.com"
+        }
+    ],
+    "require": {
+        "rmccue/requests": ">=1.8",
+        "php": "^8.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
