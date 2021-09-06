@@ -5,7 +5,7 @@ use CeculaSyncApiClient\SyncCall;
 use CeculaSyncApiClient\SyncSms;
 use CeculaSyncApiClient\SyncAccount;
 
-$testMobile = ""; // Enter your mobile number here
+$testMobile = "2348183172770"; // Enter your mobile number here
 
 // Testing Methods for Making Calls
 $syncCall = new SyncCall();

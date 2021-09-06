@@ -17,7 +17,7 @@ class SyncCall extends SyncApiClient implements SyncCallInterface
      */
     public function dial(string $receiver): object
     {
-        $endpoint = sprintf("%s/%s", $this->apiManager->base, $this->apiManager->endpoints->call->sendMissedCall->endpoint);
+        $endpoint = sprintf("%s/%s", $this->apiManager->base, $this->apiManager->endpoints->call->dial->endpoint);
         $data = [
             "receiver" => $receiver
         ];
