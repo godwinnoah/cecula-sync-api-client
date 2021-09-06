@@ -10,7 +10,7 @@ $testMobile = ""; // Enter your mobile number here
 // Testing Methods for Making Calls
 $syncCall = new SyncCall();
 echo "Send Missed Call: ".PHP_EOL;
-var_dump($syncCall->sendMissedCall($testMobile));
+var_dump($syncCall->dial($testMobile));
 echo PHP_EOL;
 echo PHP_EOL;
 echo "Call Status: ".PHP_EOL;
