@@ -42,9 +42,12 @@ require_once __DIR__."/vendor/autoload.php";
 
 #### Calls
 ~~~
+use CeculaSyncApiClient\SyncCall;
+
+
 $testMobile = ""; // Enter your mobile number here
 
-// Testing Methods for Making Calls
+
 $syncCall = new SyncCall();
 
 echo "Send Missed Call: ".PHP_EOL;
@@ -62,7 +65,11 @@ var_dump($syncCall->getNewMissedCalls());
 
 #### SMS
 ~~~
+use CeculaSyncApiClient\SyncSms;
+
 $syncSms = new SyncSms();
+
+
 echo "Send SMS: ".PHP_EOL;
 var_dump($syncSms->sendSMS("Hello Sync", [$testMobile]));
 
@@ -78,6 +85,8 @@ var_dump($syncSms->setSMSAutoResponseText("Thank you. I'll revert ASAP"));
 
 #### Account Management
 ~~~
+use CeculaSyncApiClient\SyncAccount;
+
 $syncAccount = new SyncAccount();
 
 echo "Get Cecula Balance: ".PHP_EOL;
