@@ -8,15 +8,21 @@ use Requests;
 class SyncCall extends SyncApiClient implements SyncCallInterface
 {
 
+
     /**
      * Dial Number
      * This method dials the supplied mobile phone number
      *
      * @param string $receiver Mobile number of recipient prefixed with country code.
      * @return object
+     * @throws \Exception
      */
     public function dial(string $receiver): object
     {
+//       Validate number before dialling. Will throw exception if number is invalid.
+        $mobileNumberValidator = new RecipientValidator();
+        $mobileNumberValidator->validate($receiver);
+
         $endpoint = sprintf("%s/%s", $this->apiManager->base, $this->apiManager->endpoints->call->dial->endpoint);
         $data = [
             "receiver" => $receiver
@@ -69,4 +75,6 @@ class SyncCall extends SyncApiClient implements SyncCallInterface
         $response = Requests::patch($endpoint, $this->requestHeader, json_encode($data));
         return json_decode($response->body);
     }
+
+
 }

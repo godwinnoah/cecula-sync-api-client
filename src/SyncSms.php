@@ -10,12 +10,17 @@ class SyncSms extends SyncApiClient implements SyncSmsInterface
      * Send SMS
      * This method sends sms using the Cecula Sync API.
      *
-     * @param string $text       Message body
-     * @param array $recipients  An indexed array of recipients. eg. ["23480xxxxxxx","23490xxxxxxxx",...]
+     * @param string $text Message body
+     * @param array $recipients An indexed array of recipients. eg. ["23480xxxxxxx","23490xxxxxxxx",...]
      * @return object            A JSON object
+     * @throws \Exception
      */
     public function sendSMS(string $text, array $recipients): object
     {
+        //       Validate number before dialling. Will throw exception if number is invalid.
+        $mobileNumberValidator = new RecipientValidator();
+        $mobileNumberValidator->validateAll(implode(",", $recipients));
+
         $endpoint = sprintf("%s/%s", $this->apiManager->base, $this->apiManager->endpoints->sms->sendSms->endpoint);
         $data = [
             "text" => $text,

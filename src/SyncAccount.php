@@ -2,10 +2,23 @@
 
 namespace CeculaSyncApiClient;
 
+use phpDocumentor\Reflection\Types\Boolean;
 use Requests;
 
 class SyncAccount extends SyncApiClient implements SyncAccountInterface
 {
+    private float $minSmsCost = 2.5;
+
+    /**
+     * Balance is Insufficient
+     * This method checks when balance is below the treshold for sending a single page message
+     *
+     * @return boolean
+     */
+    public function balanceIsInsufficient(): bool
+    {
+        return $this->getCeculaBalance() < $this->minSmsCost;
+    }
 
     /**
      * Get Balance
