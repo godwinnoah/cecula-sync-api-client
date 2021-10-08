@@ -5,7 +5,7 @@ use CeculaSyncApiClient\SyncCall;
 use CeculaSyncApiClient\SyncSms;
 use CeculaSyncApiClient\SyncAccount;
 
-$testMobile = "2348183172770"; // Enter your mobile number here
+$testMobile = ""; // Enter your mobile number here
 
 // Testing Methods for Making Calls
 $syncCall = new SyncCall();
@@ -64,5 +64,9 @@ echo PHP_EOL;
 echo PHP_EOL;
 echo "Refresh SIM: ".PHP_EOL;
 var_dump($syncAccount->refreshSIM());
+echo PHP_EOL;
+echo PHP_EOL;
+echo "SIM MSISDN: ".PHP_EOL;
+var_dump($syncAccount->getSimMSISDN());
 echo PHP_EOL;
 echo PHP_EOL;

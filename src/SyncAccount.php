@@ -9,6 +9,20 @@ class SyncAccount extends SyncApiClient implements SyncAccountInterface
 {
     private float $minSmsCost = 2.5;
 
+
+    /**
+     * Get SIM MSISDN
+     * This method exposes the mobile number behind and API Key
+     *
+     * @return object
+     */
+    public function getSimMSISDN(): object
+    {
+        $endpoint = sprintf("%s/%s", $this->apiManager->base, $this->apiManager->endpoints->account->msisdn->endpoint);
+        $response = Requests::get($endpoint, $this->requestHeader);
+        return json_decode($response->body);
+    }
+
     /**
      * Balance is Insufficient
      * This method checks when balance is below the treshold for sending a single page message
