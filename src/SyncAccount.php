@@ -23,6 +23,30 @@ class SyncAccount extends SyncApiClient implements SyncAccountInterface
         return json_decode($response->body);
     }
 
+
+    /**
+     * Set Dynamic Webhook
+     * This endpoint is used for setting dynamic webhook for call and for sms
+     *
+     * @param string $url
+     * @param string $clientMsisdn
+     * @param string $verificationType
+     * @param integer $validityPeriod
+     * @return object
+     */
+    public function setDynamicWebhook(string $url, string $clientMsisdn, string $verificationType, int $validityPeriod): object
+    {
+        $endpoint = sprintf("%s/%s", $this->apiManager->base, $this->apiManager->endpoints->account->setDynamicWebhook->endpoint);
+        $response = Requests::post($endpoint, $this->requestHeader, json_encode([
+            'url' => $url,
+            'originMsisdn' => $clientMsisdn,
+            'trafficType' => $verificationType,
+            'validityPeriod' => $validityPeriod
+        ]));
+        return json_decode($response->body);
+    }
+
+
     /**
      * Balance is Insufficient
      * This method checks when balance is below the treshold for sending a single page message

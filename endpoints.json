@@ -45,6 +45,9 @@
             },
             "refreshSim": {
                 "endpoint": "management/refresh-sim"
+            },
+            "setDynamicWebhook": {
+                "endpoint": "set-dynamic-webhook"
             }
         }
     },

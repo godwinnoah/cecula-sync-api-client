@@ -12,4 +12,6 @@ interface SyncAccountInterface
     public function getSimStatus(string $msisdn): Object;
 
     public function refreshSIM(string $msisdn): Object;
+
+    public function setDynamicWebhook(string $url, string $clientMsisdn, string $verificationType, int $validityPeriod): Object;
 }
