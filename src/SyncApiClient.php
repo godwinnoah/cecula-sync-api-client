@@ -6,6 +6,7 @@ use Exception;
 class SyncApiClient
 {
     private static string $credentialSource = ".ceculasync.json";
+    
     private object $credentials;
 
     protected object $apiManager;
@@ -29,7 +30,7 @@ class SyncApiClient
 
     }
 
-    private function getCredentials(): string
+    public function getCredentials(): string
     {
         $pathway = strstr(__DIR__, 'vendor/cecula/sync-api-client') ? "/../../../../" : "/../";
         if (!file_exists(__DIR__.$pathway.self::$credentialSource)) {
